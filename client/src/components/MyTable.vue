@@ -1,4 +1,7 @@
 <template>
+  <!-- <pre>
+  {{ JSON.stringify(data, null, 2) }}
+  </pre> -->
   <n-data-table :columns="columns" :data="data" :bordered="false" />
 </template>
 
@@ -11,11 +14,12 @@
   function init() {
     // dosomething to init data
     axios
-      .get('/api/courses')
+      .get('/api/users')
       // http://localhost:8081/api/courses
       .then(function (response) {
         // handle success
         console.log(response)
+        data.value = response.data.data
       })
       .catch(function (error) {
         // handle error
@@ -30,25 +34,30 @@
     init()
   })
 
-  type Song = {
-    no: number
-    title: string
-    length: string
+  interface UserData {
+    user_id: number
+    user_name: string
+    user_password: string
+    email: string
   }
 
-  const createColumns = ({ play }: { play: (row: Song) => void }): DataTableColumns<Song> => {
+  const createColumns = ({ play }: { play: (row: UserData) => void }): DataTableColumns<UserData> => {
     return [
       {
-        title: 'No',
-        key: 'no',
+        title: '用户ID',
+        key: 'user_id',
       },
       {
-        title: 'Title',
-        key: 'title',
+        title: '用户名',
+        key: 'user_name',
       },
       {
-        title: 'Length',
-        key: 'length',
+        title: '用户密码',
+        key: 'user_password',
+      },
+      {
+        title: '邮箱',
+        key: 'email',
       },
       {
         title: 'Action',
@@ -69,14 +78,11 @@
     ]
   }
 
-  const data: Song[] = [
-    { no: 3, title: 'Wonderwall', length: '4:18' },
-    { no: 4, title: "Don't Look Back in Anger", length: '4:48' },
-    { no: 12, title: 'Champagne Supernova', length: '7:27' },
-  ]
+  const data = ref<UserData[]>([])
+
   const columns = createColumns({
-    play(row: Song) {
-      message.info(`Play ${row.title}`)
+    play(row: UserData) {
+      message.info(`Play ${row.user_name}`)
     },
   })
 

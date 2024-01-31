@@ -11,6 +11,7 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
+// 对 Body，Param 这些请求过来的东西进行二次处理
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
