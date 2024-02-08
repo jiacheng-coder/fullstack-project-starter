@@ -14,64 +14,28 @@ export class UsersService {
     // 从数据库里拿到所有用户的数据 -> MySQL
     return [
       {
-        user_id: 1,
+        user_id: 'sdfasdf',
         user_name: 'user1',
         user_password: 'password1',
-        email: 'user1@example.com',
+        user_email: 'user1@example.com',
       },
       {
-        user_id: 2,
+        user_id: 'asdfasfasdf',
         user_name: 'user2',
         user_password: 'password2',
-        email: 'user2@example.com',
+        user_email: 'user2@example.com',
       },
       {
-        user_id: 3,
+        user_id: 'asfasdfds',
         user_name: 'user3',
         user_password: 'password3',
-        email: 'user3@example.com',
+        user_email: 'user3@example.com',
       },
       {
-        user_id: 4,
+        user_id: 'sadfasfasf',
         user_name: 'user4',
         user_password: 'password4',
-        email: 'user4@example.com',
-      },
-      {
-        user_id: 5,
-        user_name: 'user5',
-        user_password: 'password5',
-        email: 'user5@example.com',
-      },
-      {
-        user_id: 6,
-        user_name: 'user6',
-        user_password: 'password6',
-        email: 'user6@example.com',
-      },
-      {
-        user_id: 7,
-        user_name: 'user7',
-        user_password: 'password7',
-        email: 'user7@example.com',
-      },
-      {
-        user_id: 8,
-        user_name: 'user8',
-        user_password: 'password8',
-        email: 'user8@example.com',
-      },
-      {
-        user_id: 9,
-        user_name: 'user9',
-        user_password: 'password9',
-        email: 'user9@example.com',
-      },
-      {
-        user_id: 10,
-        user_name: 'user10',
-        user_password: 'password10',
-        email: 'user10@example.com',
+        user_email: 'user4@example.com',
       },
     ];
   }
