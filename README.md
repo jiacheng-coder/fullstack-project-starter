@@ -1,6 +1,6 @@
 # 全栈入门系列课
 
-> 视频宗旨：为大家入门 TS 全栈提供一个窗口，涉及到许多前沿技术, start at 2024.1.26
+> start at 2024.1.26
 
 【bilibili】https://www.bilibili.com/video/BV1u64y1w75T
 
@@ -17,6 +17,9 @@
 
 ## 04. 前后端联动实现表格渲染(补充)
 
-## 05. Nuxtjs 踩坑指南（低质量）
+## 05. Nuxtjs 入门 + Nuxtjs 代理最佳实践
 
-## 06. Nuxtjs 代理最佳实践
+- 什么是 Nuxtjs? - 基于 Vue 构建的 SSR 框架（类比 Nextjs 是基于 React 构建的 SSR 框架）
+- 什么是 SSR（Server-side Rendering） 渲染 - 充分利用服务端机器的能力，在服务端替代原先 SPA 渲染方式下的许多工作
+- 创建 Nuxt.js 项目并讲解其核心功能 core feature
+- Nuxt.js 代理配置最佳实践
