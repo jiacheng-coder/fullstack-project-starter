@@ -1,0 +1,20 @@
+FROM node:21
+
+WORKDIR /user/src/app
+
+COPY . .
+
+RUN npm config set registry http://registry.npmmirror.com
+
+RUN npm install -g pnpm
+
+RUN pnpm install
+
+RUN pnpm build
+
+RUN rm -rf ./src
+
+EXPOSE 8083
+
+# npm run start:prod
+CMD [ "pnpm","run","start:prod" ]

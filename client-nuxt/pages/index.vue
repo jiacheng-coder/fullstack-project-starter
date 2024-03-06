@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <h1>Index Page</h1>
-    <div v-if="data">
-      Data: {{ data }}
-    </div>
-    <a href="/api/users">EndPoint</a>
-  </div>
+  <main>
+    <AppTitle :title="title" />
+    <input type="text" v-model="title" />
+  </main>
 </template>
 
 <script setup lang="ts">
-const { data } = await useFetch('/api/users') // server default value is true
+  const title = ref('title')
 </script>
+
+<style scoped></style>

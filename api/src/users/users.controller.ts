@@ -6,18 +6,23 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { ValidateCreateUserPipe } from './pipes/validate-create-user.pipe';
+import { AuthGuard } from './guards/auth.guard';
 
 // 对 Body，Param 这些请求过来的东西进行二次处理
 @Controller('users')
+@UseGuards(AuthGuard)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post()
-  create(@Body() createUserDto: CreateUserDto) {
+  create(@Body(ValidateCreateUserPipe) createUserDto: CreateUserDto) {
+    console.log('create in controller', createUserDto);
     return this.usersService.create(createUserDto);
   }
 
